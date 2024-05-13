@@ -39,5 +39,5 @@ class Queue:
 my_queue = Queue()
 my_queue.enqueue(10)
 my_queue.enqueue(20)
-print(my_queue.dequeue())  # Output: 10
-print(my_queue.peek())  # Output: 20
+print(my_queue.dequeue())  
+print(my_queue.peek())  

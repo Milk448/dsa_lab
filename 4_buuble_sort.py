@@ -25,4 +25,4 @@ def bubble_sort(char_list):
   for i in range(n - 1):
     for j in range(0, n - i - 1):
       if ord(char_list[j]) > ord(char_list[j + 1]):  # Compare ASCII values and change as programmed 'ASCII=>ACIIS'
-        char_list[j], char_
+        char_list[j], char_list
