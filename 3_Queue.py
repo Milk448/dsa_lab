@@ -1,68 +1,43 @@
-from 2_stack import as Stack,
-class ImportedStack:
-     self.item=[]
-     def addElementAtEnd(self, data):
-          self.item.append(item)
-
-
-     def removeFromFront(self):
-          if self.item !=0:
-               return self.item.pop()
-     def peek(self, data):
-          if self.item!=None:
-               return self.item[index]
-          
-     def check_is_empty(self):
-          if self.item==0:
-               return True
-          else:
-               return False
-
-
-
-
-#This an other way I implemented the    Queue 
+from stack import Stack
 class Queue:
     def __init__(self):
-         self.data = []
-    
+        self.s1 = Stack(max_size=10)  # Stack for enqueue operations
+        self.s2 = Stack(max_size=10)  # Stack for dequeue operations
+
+    def is_empty(self):
+        return self.s1.is_empty() and self.s2.is_empty()
+
     def enqueue(self, data):
-         self.data.append(data)
+        self.s1.push(data)
 
-    def Is_empty(self):
-         if self.Is_empty==0:
-              return None 
-         else:
-              return len(self.data)
-    
     def dequeue(self):
-         if self.Is_empty==0:
-              return None
-         else:
-              return self.data.pop(0)
-    
+        if self.is_empty():
+            print("Queue underflow")
+            return None
+
+        # Move elements from s1 to s2 if s2 is empty
+        if self.s2.is_empty():
+            while not self.s1.is_empty():
+                self.s2.push(self.s1.pop())
+
+        # Dequeue from s2 (FIFO)
+        return self.s2.pop()
+
     def peek(self):
-         if self.Is_empty!=0:
-              return self.data[0]
-         else:
-              return None
-         
+        if self.is_empty():
+            print("Queue is empty")
+            return None
+
+        # Move elements from s1 to s2 if s2 is empty (to maintain order)
+        if self.s2.is_empty():
+            while not self.s1.is_empty():
+                self.s2.push(self.s1.pop())
+
+        return self.s2.peek()
+
+# Example usage
 my_queue = Queue()
-my_queue.enqueue(1)
-my_queue.enqueue(2)
-my_queue.enqueue(3)
-
-print(my_queue.Is_empty()) 
-print(my_queue.peek())  # Output: Bob
-print(my_queue.dequeue())  # Output: Bob
-print(my_queue.dequeue())  # Output: Charlie
-print(my_queue.Is_empty())
-print(my_queue.dequeue())  # Output: None (empty queue)
-print(my_queue.Is_empty()) 
-print(my_queue.Is_empty()) 
-print(my_queue.Is_empty()) 
-print(my_queue.Is_empty()) 
-
-
-
-
+my_queue.enqueue(10)
+my_queue.enqueue(20)
+print(my_queue.dequeue())  # Output: 10
+print(my_queue.peek())  # Output: 20

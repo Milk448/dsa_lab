@@ -16,3 +16,13 @@ def bubble_sort(arr):
 array = ['A', 'S', 'C', 'I', 'I']
 sorted_array = bubble_sort(array)
 print(sorted_array)  # checked
+
+
+def bubble_sort(char_list):
+  n = len(char_list)
+  swapped = False
+
+  for i in range(n - 1):
+    for j in range(0, n - i - 1):
+      if ord(char_list[j]) > ord(char_list[j + 1]):  # Compare ASCII values and change as programmed 'ASCII=>ACIIS'
+        char_list[j], char_
