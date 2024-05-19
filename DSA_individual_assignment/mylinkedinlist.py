@@ -70,7 +70,6 @@ ll.insertAtPos(1, 1)
 ll.insertAtPos(2, 2)
 ll.insertAtPos(3, 3)
 ll.insertAtPos(4, 2)
-ll.insertAtPos(10,12)
     
 
 
