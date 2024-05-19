@@ -39,7 +39,7 @@ class LinkedList:
         if temp.next is None: #this deletes the pointer of the the deleted data, if this is not done there will be two linkedlist which we don't need  
             raise Exception("Position out of bounds")
         temp.next = temp.next.next
-        
+
 #Deletes the node that occurs after the node with the specified prev_node_data.
     def deleteAfterNode(self, prev_node_data):
         temp = self.head
@@ -62,6 +62,15 @@ class LinkedList:
             temp = temp.next
             pos += 1
         return -1
+
+
+# Testing the LinkedList class
+ll = LinkedList()
+ll.insertAtPos(1, 1)
+ll.insertAtPos(2, 2)
+ll.insertAtPos(3, 3)
+ll.insertAtPos(4, 2)
+ll.insertAtPos(10,12)
     
 
 
@@ -89,12 +98,7 @@ class Stack:
             raise Exception("Stack is empty")
         return self.head.data
 
-# Testing the LinkedList class
-ll = LinkedList()
-ll.insertAtPos(1, 1)
-ll.insertAtPos(2, 2)
-ll.insertAtPos(3, 3)
-ll.insertAtPos(4, 2)
+
 
 print("After inserts:")
 current = ll.head
@@ -133,3 +137,7 @@ stack.push(30)
 print("Top element is:", stack.peek())
 print("Popped element is:", stack.pop())
 print("Top element after pop is:", stack.peek())
+
+
+
+#I have wrote full explanation of each operation , you can find in in expanation.txt
