@@ -1,0 +1,63 @@
+Explanation:
+
+LinkedList Class:
+
+insertAtPos(data, pos): 
+                     Inserts a new node with the specified data='data' at the given position 'pos'.
+                     If the position is 1, it updates the head to point to the new node.
+                    Otherwise, it traverses the list to find the position before the insertion point, then inserts the new node.
+
+
+
+deleteAtPosition(pos): 
+                    Deletes the node at the given position.
+                    If the list is empty, it raises an exception.
+                    If the position is 1, it updates the head to point to the next node.
+                    Otherwise, it traverses the list to find the node before the deletion point, then updates the next pointer to skip the deleted node.
+
+
+
+
+
+deleteAfterNode(prev_node_data): 
+                               Deletes the node that occurs after the node with the specified prev_node_data.
+                               It traverses the list to find the node with the given data, then updates the next pointer to skip the node after it.
+                             If the given node has no next node, it raises an exception.
+
+
+
+
+searchNode(key): 
+               
+               Searches for a node with the specified key(value) and returns its position.
+               It traverses the list, checking each node's data.
+               If a match is found, it returns the position; otherwise, it returns -1.
+
+
+Stack Class:
+
+push(data): Adds a new element to the top of the stack.
+pop(): Removes and returns the top element of the stack.
+peek(): Returns the top element of the stack without removing it.
+       Returns the top element of the stack without removing it.
+      If the stack is empty, it raises an exception.
+      
+
+
+
+- comparison and generally I dea I got from this assignemt :
+     * After I wrote my code and test it , I understand the following operation or works done from the task.
+
+     LinkedList Testing:
+
+                  -Insert nodes at various positions and print the list.
+                 - Delete nodes at specified positions and print the list after each deletion.
+                  -Search for nodes with specific values and print the results.
+
+
+   Stack Testing:
+
+                -Push elements onto the stack.
+                -Peek at the top element and print it.
+                -Pop the top element and print it.
+                -Peek again to verify the new top element after the pop.
